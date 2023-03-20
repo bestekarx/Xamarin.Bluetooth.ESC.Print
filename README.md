@@ -1,17 +1,11 @@
-# XamarinESCUtils
+# XamarinBluetoothESCPrint
 
-# Xamarin.Forms code samples
+This project currently only works on android platforms for xamarin forms. (development will start for ios).
 
-The samples in this repository demonstrate how to use different aspects of Xamarin.Forms to build cross-platform apps for iOS, Android, and the Universal Windows Platform (UWP). Please visit Microsoft [code sample browser](https://docs.microsoft.com/samples/browse/?term=Xamarin.Forms) to download individual samples.
+Supported platforms:
 
-For additional platform support, visit the following forks:
-
-- Tizen: https://github.com/Samsung/xamarin-forms-samples 
-- GTK#: https://github.com/jsuarezruiz/xamarin-forms-samples/tree/gtk
-
-## License
-
-See the [license file](LICENSE) and any additional license information attached to each sample.
+- Xamarin.Forms
+- Xamarin.Android
 
 ## Sample submission guidelines
 
