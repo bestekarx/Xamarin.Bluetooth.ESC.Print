@@ -1,0 +1,57 @@
+<Project Sdk="MSBuild.Sdk.Extras/3.0.22">
+
+
+  <PropertyGroup>
+    <AssemblyName>XamarinESCUtils</AssemblyName>
+    <RootNamespace>XamarinESCUtils</RootNamespace>  
+    <TargetFrameworks>netstandard2.0;MonoAndroid81;</TargetFrameworks>
+    <_WriteTelemetryProperties>false</_WriteTelemetryProperties>
+    <PackageId>Xamarin.ESCUtils</PackageId>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>1.0.0</Version>
+    <PackageVersion>1.0.0</PackageVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
+    <LangVersion>default</LangVersion>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">false</GenerateDocumentationFile>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+
+	<PackageLicenseUrl>https://github.com/CrossGeeks/GoogleClientPlugin/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/CrossGeeks/GoogleClientPlugin</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CrossGeeks/GoogleClientPlugin</RepositoryUrl>
+    <PackageReleaseNotes>Exposure of the user token.</PackageReleaseNotes>
+    <PackageIconUrl>https://github.com/CrossGeeks/GoogleClientPlugin/blob/master/GoogleClient/art/icon.png?raw=true</PackageIconUrl>
+    <PackageTags>xamarin, ios, Android, xamarin.forms, plugin, GoogleClient, authentication, google</PackageTags>
+	
+	<Title>Xamarin ESC Utils</Title>
+    <Summary>Xamarin Bluetooth Printer ESC/POS Controller Xamarin.Android</Summary>
+    <Description>The easiest way to connect to a bluetooth printer in Xamarin Forms applications and print from the printer.</Description>
+
+    <Authors>Bestekarx</Authors>
+    <Owners>bestekarx</Owners>
+    <Copyright>Copyright 2023</Copyright>
+  </PropertyGroup>
+  
+  
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+    <Compile Include="Platforms\Common\**\*.cs" />
+    <Compile Include="Model\**\*.cs" />
+  </ItemGroup>
+
+<ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <Compile Include="Platforms\Android\**\*.cs" />
+    <Compile Include="Platforms\Common\**\*.cs" />
+    <Compile Include="Model\**\*.cs" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+
+
+
+</Project>
