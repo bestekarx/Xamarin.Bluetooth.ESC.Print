@@ -22,15 +22,15 @@
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
-	<PackageLicenseUrl>https://github.com/CrossGeeks/GoogleClientPlugin/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/CrossGeeks/GoogleClientPlugin</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/CrossGeeks/GoogleClientPlugin</RepositoryUrl>
-    <PackageReleaseNotes>Exposure of the user token.</PackageReleaseNotes>
+	<PackageLicenseUrl>https://github.com/bestekarx/Xamarin.Bluetooth.ESC.Print</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/bestekarx/Xamarin.Bluetooth.ESC.Print</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bestekarx/Xamarin.Bluetooth.ESC.Print</RepositoryUrl>
+    <PackageReleaseNotes>Xamarin Forms Bluetooth Printers.</PackageReleaseNotes>
     <PackageIconUrl>https://github.com/CrossGeeks/GoogleClientPlugin/blob/master/GoogleClient/art/icon.png?raw=true</PackageIconUrl>
-    <PackageTags>xamarin, ios, Android, xamarin.forms, plugin, GoogleClient, authentication, google</PackageTags>
+    <PackageTags>xamarin, Android, xamarin.forms, bluetooth printer, esc pos, esc printer, bluetooth printer, printer</PackageTags>
 	
-	<Title>Xamarin ESC Utils</Title>
-    <Summary>Xamarin Bluetooth Printer ESC/POS Controller Xamarin.Android</Summary>
+	<Title>Xamarin ESC Printer Utils</Title>
+    <Summary>Xamarin Bluetooth Printer ESC/POS Controller Xamarin.Forms and Xamarin.Android</Summary>
     <Description>The easiest way to connect to a bluetooth printer in Xamarin Forms applications and print from the printer.</Description>
 
     <Authors>Bestekarx</Authors>
@@ -51,7 +51,5 @@
   </ItemGroup>
 
   <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
-
-
 
 </Project>
