@@ -196,7 +196,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        //设置下划线2点
         byte[] IEscUtil.underlineWithTwoDotWidthOn()
         {
             byte[] result = new byte[3];
@@ -206,7 +205,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        //取消下划线
         byte[] IEscUtil.UnderlineOff()
         {
             byte[] result = new byte[3];
@@ -216,11 +214,8 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        // ------------------------bold-----------------------------
-        /**
-         * 字体加粗
-         */
-        byte[] IEscUtil.boldOn()
+     
+        byte[] IEscUtil.BoldOn()
         {
             byte[] result = new byte[3];
             result[0] = Esc;
@@ -229,9 +224,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        /**
-         * 取消字体加粗
-         */
         byte[] IEscUtil.BoldOff()
         {
             byte[] result = new byte[3];
@@ -240,11 +232,7 @@ namespace XamarinESCUtils.Platforms.Android
             result[2] = 0;
             return result;
         }
-
-        // ------------------------character-----------------------------
-        /*
-        *单字节模式开启
-         */
+      
         byte[] IEscUtil.SingleByte()
         {
             byte[] result = new byte[2];
@@ -253,9 +241,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        /*
-        *单字节模式关闭
-        */
         byte[] IEscUtil.SingleByteOff()
         {
             byte[] result = new byte[2];
@@ -264,9 +249,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        /**
-         * 设置单字节字符集
-         */
         byte[] IEscUtil.SetCodeSystemSingle(byte charset)
         {
             byte[] result = new byte[3];
@@ -276,9 +258,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        /**
-         * 设置多字节字符集
-         */
         byte[] IEscUtil.SetCodeSystem(byte charset)
         {
             byte[] result = new byte[3];
@@ -288,11 +267,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        // ------------------------Align-----------------------------
-
-        /**
-         * 居左
-         */
         byte[] IEscUtil.AlignLeft()
         {
             byte[] result = new byte[3];
@@ -302,9 +276,6 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        /**
-         * 居中对齐
-         */
         byte[] IEscUtil.AlignCenter()
         {
             byte[] result = new byte[3];
@@ -314,9 +285,7 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        /**
-         * 居右
-         */
+    
         byte[] IEscUtil.AlignRight()
         {
             byte[] result = new byte[3];
@@ -326,13 +295,8 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-
-        ////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////          private                /////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////////
         private static byte[] SetQrCodeSize(int modulesize)
         {
-            //二维码块大小设置指令
             byte[] dtmp = new byte[8];
             dtmp[0] = Gs;
             dtmp[1] = 0x28;
@@ -347,7 +311,6 @@ namespace XamarinESCUtils.Platforms.Android
 
         private static byte[] SetQrCodeErrorLevel(int errorlevel)
         {
-            //二维码纠错等级设置指令
             byte[] dtmp = new byte[8];
             dtmp[0] = Gs;
             dtmp[1] = 0x28;
@@ -363,10 +326,9 @@ namespace XamarinESCUtils.Platforms.Android
 
         private static byte[] GetBytesForPrintQrCode(bool single)
         {
-            //打印已存入数据的二维码
             byte[] dtmp;
             if (single)
-            {       //同一行只打印一个QRCode， 后面加换行
+            {  
                 dtmp = new byte[9];
                 dtmp[8] = 0x0A;
             }
@@ -387,7 +349,6 @@ namespace XamarinESCUtils.Platforms.Android
 
         private static byte[] GetQCodeBytes(String code)
         {
-            //二维码存入指令
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
             try
             {

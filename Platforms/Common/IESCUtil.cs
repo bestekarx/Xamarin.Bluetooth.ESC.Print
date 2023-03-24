@@ -16,7 +16,7 @@ namespace XamarinESCUtils.Platforms.Common
         byte[] underlineWithOneDotWidthOn();
         byte[] underlineWithTwoDotWidthOn();
         byte[] UnderlineOff();
-        byte[] boldOn();
+        byte[] BoldOn();
         byte[] BoldOff();
         byte[] SingleByte();
         byte[] SingleByteOff();
