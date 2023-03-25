@@ -25,5 +25,8 @@ namespace XamarinESCUtils.Platforms.Common
         byte[] AlignLeft();
         byte[] AlignCenter();
         byte[] AlignRight();
+        byte CodeParse(int value);
+        byte[] GetTextBytes(string text);
+        string TurkishCharacter(string st);
     }
 }
