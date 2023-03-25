@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="SampleApp.MainPage"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:model="clr-namespace:XamarinESCUtils.Model;assembly=XamarinESCUtils"
+  xmlns:viewModels="clr-namespace:SampleApp.ViewModels;assembly=SampleApp"
+  x:Name="MainPageKey"
+  x:DataType="viewModels:MainPageViewModel">
+
+  <Grid Margin="10" RowDefinitions="Auto, Auto, 250, 1, Auto">
+
+    <Frame
+      Grid.Row="0"
+      Padding="24"
+      BackgroundColor="#2196F3"
+      CornerRadius="0">
+      <Label
+        FontSize="Default"
+        HorizontalTextAlignment="Center"
+        Text="Xamarin.Forms ESC/POS Bluetooth Printer List"
+        TextColor="White" />
+    </Frame>
+
+    <Label
+      Grid.Row="1"
+      FontSize="Default"
+      HorizontalTextAlignment="Start"
+      Text="{Binding PrinterListInfo}" />
+
+    <ListView
+      Grid.Row="2"
+      Margin="20,0,20,0"
+      ItemsSource="{Binding PrinterList}"
+      SelectionMode="None"
+      VerticalOptions="Start">
+      <ListView.ItemTemplate>
+        <DataTemplate x:DataType="model:BluetoothInfo">
+          <ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <Image Aspect="AspectFit" Source="right_arrow" />
+              <Label
+                HorizontalTextAlignment="Start"
+                Text="{Binding Name}"
+                TextColor="Black"
+                VerticalTextAlignment="Center" />
+              <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Path=BindingContext.PrinterSelected, Source={x:Reference MainPageKey}}" CommandParameter="{Binding .}" />
+              </StackLayout.GestureRecognizers>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+    <BoxView
+      Grid.Row="3"
+      HeightRequest="1"
+      Color="Black" />
+
+    <Button
+      Grid.Row="4"
+      Command="{Binding OnPrintTest}"
+      Text="Print Test" />
+
+  </Grid>
+
+</ContentPage>

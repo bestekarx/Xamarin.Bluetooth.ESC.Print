@@ -62,7 +62,7 @@ namespace XamarinESCUtils.Platforms.Android
             return buffer.ToByteArray();
         }
 
-      
+
         byte[] IEscUtil.GetPrintDoubleQrCode(String code1, String code2, int modulesize, int errorlevel)
         {
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
@@ -141,7 +141,7 @@ namespace XamarinESCUtils.Platforms.Android
             return buffer.ToByteArray();
         }
 
-        public static byte[] PrintBitmap(Bitmap bitmap, int mode)
+        byte[] PrintBitmap(Bitmap bitmap, int mode)
         {
             var bytes1 = new byte[4];
             bytes1[0] = Gs;
@@ -153,7 +153,7 @@ namespace XamarinESCUtils.Platforms.Android
             return BytesUtil.ByteMerger(bytes1, bytes2);
         }
 
-        public static byte[] PrintBitmap(Bitmap bitmap)
+        byte[] PrintBitmap(Bitmap bitmap)
         {
             var bytes1 = new byte[4];
             bytes1[0] = Gs;
@@ -214,7 +214,7 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-     
+
         byte[] IEscUtil.BoldOn()
         {
             byte[] result = new byte[3];
@@ -232,7 +232,7 @@ namespace XamarinESCUtils.Platforms.Android
             result[2] = 0;
             return result;
         }
-      
+
         byte[] IEscUtil.SingleByte()
         {
             byte[] result = new byte[2];
@@ -285,7 +285,7 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-    
+
         byte[] IEscUtil.AlignRight()
         {
             byte[] result = new byte[3];
@@ -295,7 +295,7 @@ namespace XamarinESCUtils.Platforms.Android
             return result;
         }
 
-        private static byte[] SetQrCodeSize(int modulesize)
+        byte[] SetQrCodeSize(int modulesize)
         {
             byte[] dtmp = new byte[8];
             dtmp[0] = Gs;
@@ -309,7 +309,7 @@ namespace XamarinESCUtils.Platforms.Android
             return dtmp;
         }
 
-        private static byte[] SetQrCodeErrorLevel(int errorlevel)
+        byte[] SetQrCodeErrorLevel(int errorlevel)
         {
             byte[] dtmp = new byte[8];
             dtmp[0] = Gs;
@@ -324,11 +324,11 @@ namespace XamarinESCUtils.Platforms.Android
         }
 
 
-        private static byte[] GetBytesForPrintQrCode(bool single)
+        byte[] GetBytesForPrintQrCode(bool single)
         {
             byte[] dtmp;
             if (single)
-            {  
+            {
                 dtmp = new byte[9];
                 dtmp[8] = 0x0A;
             }
@@ -347,7 +347,7 @@ namespace XamarinESCUtils.Platforms.Android
             return dtmp;
         }
 
-        private static byte[] GetQCodeBytes(String code)
+        byte[] GetQCodeBytes(String code)
         {
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
             try
@@ -373,6 +373,78 @@ namespace XamarinESCUtils.Platforms.Android
                 Console.WriteLine(e.StackTrace);
             }
             return buffer.ToByteArray();
+        }
+
+        public byte CodeParse(int value)
+        {
+            byte res = 0x00;
+            switch (value)
+            {
+                case 0:
+                    res = 0x00;
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    res = (byte)(value + 1);
+                    break;
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                    res = (byte)(value + 8);
+                    break;
+                case 12:
+                    res = 21;
+                    break;
+                case 13:
+                    res = 33;
+                    break;
+                case 14:
+                    res = 34;
+                    break;
+                case 15:
+                    res = 36;
+                    break;
+                case 16:
+                    res = 37;
+                    break;
+                case 17:
+                case 18:
+                case 19:
+                    res = (byte)(value - 17);
+                    break;
+                case 20:
+                    res = (byte)0xff;
+                    break;
+            }
+            return (byte)res;
+        }
+        public byte[] GetTextBytes(string text)
+        {
+            return Encoding.UTF8.GetBytes(TurkishCharacter(text));
+        }
+        public string TurkishCharacter(string st)
+        {
+            string yazi = null;
+            yazi = st;
+            yazi = yazi.Replace("Ğ", "G");
+            yazi = yazi.Replace("ğ", "g");
+            yazi = yazi.Replace("Ü", "U");
+            yazi = yazi.Replace("ü", "u");
+            yazi = yazi.Replace("ö", "o");
+            yazi = yazi.Replace("ı", "i");
+            yazi = yazi.Replace("İ", "I");
+            yazi = yazi.Replace("I", "i");
+            yazi = yazi.Replace("ş", "s");
+            yazi = yazi.Replace("Ş", "S");
+            yazi = yazi.Replace("Ç", "C");
+            yazi = yazi.Replace("ç", "c");
+            return yazi;
         }
     }
 }
