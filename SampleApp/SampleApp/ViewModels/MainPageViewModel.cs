@@ -153,6 +153,9 @@ namespace SampleApp.ViewModels
                             _blueToothService.SendData(_escUtil.AlignCenter());
                             _blueToothService.SendData(_escUtil.GetPrintQrCode($"https://github.com/bestekarx", 3, 1));
                             _blueToothService.SendData(_escUtil.NextLine(1));
+
+
+                            await App.Current.MainPage.DisplayToastAsync("Printer successfully !!!");
                         }
                     }
                     catch (Exception e)
@@ -163,12 +166,10 @@ namespace SampleApp.ViewModels
                     finally
                     {
                         _blueToothService.DisconnectBlueTooth();
-                        await App.Current.MainPage.DisplayToastAsync("Printer successfully !!!");
                     }
                 });
             }
         }
-
 
         #endregion
     }
