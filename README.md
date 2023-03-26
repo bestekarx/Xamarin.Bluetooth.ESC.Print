@@ -34,24 +34,24 @@ namespace SampleApp.Droid
 ## Init Implementation
 ```sh
 using SampleApp.ViewModels;
-	using Xamarin.Forms;
-	using XamarinESCUtils.Platforms.Common;
-	namespace SampleApp
-	{
-	public partial class MainPage : ContentPage
+using Xamarin.Forms;
+using XamarinESCUtils.Platforms.Common;
+namespace SampleApp
+{
+    public partial class MainPage : ContentPage
     {
-        	private IBlueToothService _blueToothService;
-        	private IEscUtil _escUtil;
+    	private IBlueToothService _blueToothService;
+    	private IEscUtil _escUtil;
 
-			public MainPage()
-			{
-				InitializeComponent();
+		public MainPage()
+		{
+			InitializeComponent();
 
-				_blueToothService = DependencyService.Get<IBlueToothService>();
-				_escUtil = DependencyService.Get<IEscUtil>();
-			}
-    	}
+			_blueToothService = DependencyService.Get<IBlueToothService>();
+			_escUtil = DependencyService.Get<IEscUtil>();
+		}
 	}
+}
 ```
 ## Get Bluetooth Device List
 ```sh
