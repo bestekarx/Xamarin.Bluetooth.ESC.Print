@@ -1,9 +1,8 @@
 ﻿using SampleApp.ViewModels;
-using Xamarin.Forms;
 
 namespace SampleApp
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage
     {
         public MainPage()
         {
