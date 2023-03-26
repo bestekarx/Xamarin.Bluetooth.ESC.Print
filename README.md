@@ -24,7 +24,7 @@ The application has been developed for the current Xamarin.Forms android platfor
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 ```
 ## Note:
-> **Make sure to allow all permissions from application settings before running the project.
+> ** Make sure to allow all permissions from application settings before running the project.
 ## Android Mainactivity.cs
 ```sh
 [assembly: Xamarin.Forms.Dependency(typeof(BluetoothService))]
