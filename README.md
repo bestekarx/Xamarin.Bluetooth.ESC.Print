@@ -106,6 +106,6 @@ if (_BluetoothInfo != null)
     _blueToothService.SendData(_escUtil.NextLine(1));
 }
 ```
-![framwork_sample](https://user-images.githubusercontent.com/17545048/227748088-1db14ec9-65f3-40a5-afce-3bb246d0a3c4.jpg)
-![framework_app](https://user-images.githubusercontent.com/17545048/227748089-b93d9d18-293d-4dc7-bdbe-1ccfddfe3b4b.jpg)
+![framwork_sample](https://user-images.githubusercontent.com/17545048/227748088-1db14ec9-65f3-40a5-afce-3bb246d0a3c4.jpg | width=500)
+![framework_app](https://user-images.githubusercontent.com/17545048/227748089-b93d9d18-293d-4dc7-bdbe-1ccfddfe3b4b.jpg | width=500)
 
