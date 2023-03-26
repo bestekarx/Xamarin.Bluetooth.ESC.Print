@@ -1,5 +1,10 @@
 # Xamarin.Forms Android ESC/POS Bluetooth Printer
 
+## Add Nuget Package
+```sh
+dotnet add package Xamarin.ESCUtils --version 1.0.1
+```
+
 ## Features
 
 - 58, 80mm bluetooth esc/pos printer support
