@@ -66,20 +66,20 @@ foreach (var item in list)
 ```
 ## Selected Bluetooth Printer
 ```sh
- return new Command<object>(async (parameter) =>
+return new Command<object>(async (parameter) =>
 {
-try
-{
-    if (parameter is BluetoothInfo selectedItem)
+    try
     {
-        _BluetoothInfo = selectedItem;
+        if (parameter is BluetoothInfo selectedItem)
+        {
+            _BluetoothInfo = selectedItem;
+        }
     }
-}
-catch (Exception e)
-{
-    await App.Current.MainPage.DisplayToastAsync(e.Message);
-    throw;
-}
+    catch (Exception e)
+    {
+        await App.Current.MainPage.DisplayToastAsync(e.Message);
+        throw;
+    }
 });
 ```
 ## Send Printer Data
