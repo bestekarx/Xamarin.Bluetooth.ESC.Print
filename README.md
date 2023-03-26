@@ -109,6 +109,6 @@ if (_BluetoothInfo != null)
 ![img|320x271]([https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://your-image-url.type](https://user-images.githubusercontent.com/17545048/227748088-1db14ec9-65f3-40a5-afce-3bb246d0a3c4.jpg))
 
 
-<img src="[)" width="100" height="100">
-<img src="[[https://your-image-url.type](https://user-images.githubusercontent.com/17545048/227748088-1db14ec9-65f3-40a5-afce-3bb246d0a3c4.jpg](https://user-images.githubusercontent.com/17545048/227748089-b93d9d18-293d-4dc7-bdbe-1ccfddfe3b4b.jpg))" width="100" height="100">
+<img src="https://user-images.githubusercontent.com/17545048/227748088-1db14ec9-65f3-40a5-afce-3bb246d0a3c4.jpg" width="100" height="100">
+<img src="[https://your-image-url.type](https://user-images.githubusercontent.com/17545048/227748088-1db14ec9-65f3-40a5-afce-3bb246d0a3c4.jpg](https://user-images.githubusercontent.com/17545048/227748089-b93d9d18-293d-4dc7-bdbe-1ccfddfe3b4b.jpg))" width="100" height="100">
 
